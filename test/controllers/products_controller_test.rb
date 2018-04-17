@@ -5,6 +5,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     @product = products(:one)
   end
 
+  test "should get search result" do
+    get products_url, params: { name: "MyS" }, as: :json
+    assert_response :success
+  end
+
   test "should get index" do
     get products_url, as: :json
     assert_response :success

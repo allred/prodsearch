@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
+    if params[:name]
+      @products = Product.find_by_fuzzy_name(params[:name])
+    else
+      @products = Product.all
+    end
 
     render json: @products
   end
