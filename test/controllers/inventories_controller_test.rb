@@ -12,7 +12,7 @@ class InventoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create inventory" do
     assert_difference('Inventory.count') do
-      post inventories_url, params: { inventory: { count: @inventory.count, length: @inventory.length, length: @inventory.length, product_id: @inventory.product_id, style: @inventory.style, waist: @inventory.waist } }, as: :json
+      post inventories_url, params: { inventory: { count: @inventory.count, length: @inventory.length, product_id: @inventory.product_id, style: @inventory.style, waist: @inventory.waist } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class InventoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update inventory" do
-    patch inventory_url(@inventory), params: { inventory: { count: @inventory.count, length: @inventory.length, length: @inventory.length, product_id: @inventory.product_id, style: @inventory.style, waist: @inventory.waist } }, as: :json
+    patch inventory_url(@inventory), params: { inventory: { count: @inventory.count, length: @inventory.length, product_id: @inventory.product_id, style: @inventory.style, waist: @inventory.waist } }, as: :json
     assert_response 200
   end
 
