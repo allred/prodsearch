@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  waist: 1
+  length: 1
+  length: 1
+  style: MyString
+  count: 1
+  product: one
+
+two:
+  waist: 1
+  length: 1
+  length: 1
+  style: MyString
+  count: 1
+  product: two
