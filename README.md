@@ -23,9 +23,9 @@ How to run:
 
 - `cd client && yarn`
 
-- rake db:reset
+- `rake db:reset`
 
-- rake start
+- `rake start`
 
 At this point you should be able to point your browser at http://localhost:3000 and see a search input.  The search should cause the display of the closest product name(s) to the search input.
 
