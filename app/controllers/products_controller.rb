@@ -3,13 +3,21 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
+    @results = []
     if params[:name]
       @products = Product.find_by_fuzzy_name(params[:name])
     else
       @products = Product.all
     end
+    @products.each do |p|
+      @inventory = Inventory.where(product_id: p.id)
+      @results.push({
+        product: p,
+        inventory: @inventory,
+      })
+    end
 
-    render json: @products
+    render json: @results
   end
 
   # GET /products/1

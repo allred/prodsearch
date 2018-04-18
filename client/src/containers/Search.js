@@ -43,11 +43,22 @@ class Search extends Component {
           onChange={this.handleInputChange}
         />
         <p>Results{this.state.query ? " for: " + this.state.query : ":"}</p>
-        <div>{products && products.length > 1 ? products.map((product) =>
-          <div key={product.id}>
-            <img src={product.image} alt={product.name} />
-            <br />
-            {product.description}
+        <div>{products && products.length >= 1 ? products.map((product) =>
+          <div key={product.product.id}>
+
+            <div><img src={product.product.image} alt={product.product.name} /></div>
+            <div>
+            <strong>Description: {product.product.description}</strong>
+            </div>
+
+            <div>
+              <div><strong>Inventory:</strong></div>
+              {product.inventory && product.inventory.length >= 1 ? product.inventory.map((inventory) =>
+                <div key={inventory.id}>style: {inventory.style}, waist: {inventory.waist}, length: {inventory.length}, count: {inventory.count}</div>
+              ): ''
+              }
+            </div>
+
           </div>
          ): <div>No products found</div>
         }</div>
